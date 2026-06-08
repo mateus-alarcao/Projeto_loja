@@ -76,3 +76,11 @@ INSERT INTO `produtos` (nome, descricao, preco, estoque, categoria_id) VALUES
 ('Teclado Yamaha PSR', 'Teclado 61 teclas com ritmos', 1200.00, 5, 2),
 ('Bateria Pearl Export', 'Bateria acústica completa', 4800.00, 3, 3),
 ('Cabo P10 2m', 'Cabo instrumento mono 2 metros', 35.00, 50, 4);
+
+-- ViaCEP: adicionar campos de endereço na tabela clientes
+ALTER TABLE clientes
+    ADD COLUMN cep        VARCHAR(9)  DEFAULT NULL,
+    ADD COLUMN logradouro VARCHAR(150) DEFAULT NULL,
+    ADD COLUMN bairro     VARCHAR(100) DEFAULT NULL,
+    ADD COLUMN cidade     VARCHAR(100) DEFAULT NULL,
+    ADD COLUMN uf         CHAR(2)     DEFAULT NULL;
